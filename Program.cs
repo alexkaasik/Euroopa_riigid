@@ -25,13 +25,13 @@ namespace Euroopa_riigid {
                 test = Console.ReadLine();
                 
                 if ( test == "" ){ test = " "; }
-                mode = Convert.ToChar(test);
+                mode = Convert.ToChar(test[0]);
                 switch (mode) {
                     case 'h': Functions.Help();break;
                     case 'f': Functions.Find(riik_pealinn); break;
                     case 's': Functions.Show(riik_pealinn); break;
-                    case 'e': Console.WriteLine("Not aviable"); break;
-                    case 'g': Console.WriteLine("Not aviable"); break;
+                    case 'e': Functions.Edit(riik_pealinn); break;
+                    case 'g': Functions.Game(riik_pealinn); break;
                     case 'q': ProgramOnner = false; break;                 
                     case 'c': Functions.Save(riik_pealinn); break;
                     default: Console.WriteLine("Error"); break;
